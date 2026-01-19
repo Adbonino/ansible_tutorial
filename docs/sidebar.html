@@ -1,0 +1,78 @@
+ <!--
+  Documentación de Playbooks de Ansible y Scritps de python utilizados para para configuracion de SW BROCADE G720 
+  Desarrollada por: LOGICALIS 
+  Uso interno
+  Fecha: 2025
+  -->
+
+<!-- Sidebar -->
+<aside class="w-full h-full bg-gray-300 shadow-md p-12">
+    <h2 class="text-2xl font-bold mb-6">Brocade G720</h2>
+    <nav class="space-y-3 text-blue-700">
+      <a href="index.html" class="block hover:underline">Introducción</a>
+    <div>
+      <button onclick="toggleSubmenu('comandosMenu')" class="block w-full text-left hover:underline ">
+        Comandos 
+      </button>
+      <div id="comandosMenu" class="ml-4 mt-2 space-y-2 hidden">
+        <a href="ComandoAlicreate.html" class="block text-sm hover:underline">alicreate</a>
+        <a href="ComandoCfgadd.html" class="block text-sm hover:underline">cfgadd</a>
+        <a href="ComandoCfgcreate.html" class="block text-sm hover:underline">cfgcreate</a>
+        <a href="ComandoCfgenable.html" class="block text-sm hover:underline">cfgenable</a>
+        <a href="ComandoCfgsave.html" class="block text-sm hover:underline">cfgsave</a>
+        <a href="ComandoZonecreate.html" class="block text-sm hover:underline">zonecreate</a>
+      </div>
+    </div>
+      <button onclick="toggleSubmenu('ansibleMenu')" class="block w-full text-left hover:underline ">
+        Ansible 
+      </button>
+      <div id="ansibleMenu" class="ml-4 mt-2 space-y-2 hidden">
+        <a href="AnsibleProyecto.html" class="block text-sm hover:underline" title="Ir a la página de inicio">Poyecto</a>
+        <a href="Ansible_get_cfg.html" class="block text-sm hover:underline" title="Ir a la página de inicio">get_cfg_name_brocade_g720</a>
+        <a href="Ansible_crear_alias.html" class="block text-sm hover:underline" title="Ir a la página de inicio">crear_alias_brocade_g720</a>
+        <a href="Ansible_backup.html" class="block text-sm hover:underline" title="Ir a la página de inicio">backup_brocade_g720</a>
+        <a href="Ansible_crear_alias_wwn.html" class="block text-sm hover:underline" title="Ir a la página de inicio">crear_alias_wwn_brocade_g720</a>
+        <a href="Ansible_crear_un_alias.html" class="block text-sm hover:underline" title="Ir a la página de inicio">crear_un_alias_brocade_g720</a>
+        <a href="Ansible_crear_zonas.html" class="block text-sm hover:underline" title="Ir a la página de inicio">crear_zonas_brocade_g720</a>
+        <a href="Ansible_crear_una_zona.html" class="block text-sm hover:underline" title="Ir a la página de inicio">crear_una_zona_brocade_g720</a>
+        <a href="Ansible_borrar_aliasses.html" class="block text-sm hover:underline" title="Ir a la página de inicio">borrar_aliasses_brocade_g720</a>
+        <a href="Ansible_borra_zona.html" class="block text-sm hover:underline" title="Ir a la página de inicio">borrar_zona_brocade_g720</a>
+      </div>
+
+      <button onclick="toggleSubmenu('datosMenu')" class="block w-full text-left hover:underline ">
+        Datos 
+      </button>
+      <div id="datosMenu" class="ml-4 mt-2 space-y-2 hidden">
+        <a href="DatosAlias.html" class="block text-sm hover:underline">Alias</a>
+        <a href="DatosZonas.html" class="block text-sm hover:underline">Zonas</a>
+      </div>
+      </div>
+
+      <div>
+        <button onclick="toggleSubmenu('scriptsMenu')" class="block w-full text-left hover:underline ">
+          Scripts Python
+        </button>
+        <div id="scriptsMenu" class="ml-4 mt-2 space-y-2 hidden">
+          <a href="PythonAlias.html" class="block text-sm hover:underline">alias.py</a>
+          <a href="PythonZonas.html" class="block text-sm hover:underline">zonas.py</a>
+          <a href="PythonCfgadd.html" class="block text-sm hover:underline">cfgadd.py</a>
+          <a href="PythonEnable.html" class="block text-sm hover:underline">cfgenable.py</a>
+          <a href="PythonCreacion.html" class="block text-sm hover:underline">creacion.py</a>
+          <a href="PythonAgregar.html" class="block text-sm hover:underline">agregar.py</a>
+          <p><a href="PythonFormatZonas.html" class="block text-sm hover:underline">zonas_format.py</a></p>
+          <p><a href="PythonFormatAlias.html" class="block text-sm hover:underline">alias_format.py</a></p>
+          <p><a href="PythonVerificarAlias.html" class="block text-sm hover:underline">verificar_alias.py</a></p>
+        </div>
+      </div>
+
+    </nav>
+  </aside>
+
+  <!-- Script para todos los submenús -->
+  <script>
+     function toggleSubmenu(id) {
+        const menu = document.getElementById(id);
+        menu.classList.toggle('hidden');
+      }
+  </script>
+

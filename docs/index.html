@@ -1,8 +1,95 @@
-<html>
-    <head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brocade G720</title>
+<script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    content: ["./**/*.html"]
+  }
+</script>
 
-    </head>
-    <body>
-        <h1>Ansible - Tutorial</h1>
-    </body>
+  <!--
+  Documentación de Playbooks de Ansible y Scritps de python utilizados para para configuracion de SW BROCADE G720 
+  Desarrollada por: LOGICALIS 
+  Uso interno
+  Fecha: 2025
+  -->
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <header class="w-full bg-gray-800 text-gray-200 text-sm p-4 shadow-md flex items-center">
+    <img src="recursos/logo.png" alt="Ícono" class="h-10 w-10 object-contain " />
+    <p class="text-2xl ml-3">Automatización configuración Brocade G720</p>
+  </header>
+
+  <div class="flex min-h-screen">
+    
+    <div id="sidebar-container"></div>
+
+<script>
+  // Cargar sidebar
+  fetch('sidebar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('sidebar-container').innerHTML = data;
+
+      // Ahora que el HTML fue insertado, agregamos eventos
+      document.querySelectorAll('#sidebar-container button').forEach(button => {
+        button.addEventListener('click', () => {
+          const id = button.getAttribute('onclick').match(/'([^']+)'/)[1];
+          const menu = document.getElementById(id);
+          if (menu) {
+            menu.classList.toggle('hidden');
+          }
+        });
+      });
+
+      // Resaltar el enlace activo
+      const currentPath = window.location.pathname.split('/').pop();
+      document.querySelectorAll('#sidebar-container a').forEach(link => {
+        if(link.getAttribute('href') === currentPath){
+          link.classList.add('font-bold', 'underline');
+          const parentMenu = link.closest('div[id$="Menu"]');
+          if(parentMenu){
+            parentMenu.classList.remove('hidden');
+          }
+        }
+      });
+    });
+</script>
+
+
+
+
+
+
+
+    <!-- Contenido principal -->
+    <main class="flex-1 p-4">
+      <section class=" mx-auto bg-white p-8 rounded shadow mb-4">
+        <h1 class="text-3xl font-bold mb-6"><span class="text-blue-500"><b>Introducción</b></span></h1>
+
+        <p class="mb-4">
+            La presente documentación describe los scritps de python y playbooks de Ansible utilizados para la configuración de sistemas <b>BROCADE G720</b>. 
+        </p>
+        <p class="mb-4">Este proyecto tiene como objetivo automatizar la configuración y gestión de switches Brocade G720 mediante Ansible, utilizando playbooks específicos para garantizar una implementación rápida, consistente y reproducible en entornos de red.</p>
+        <p class="mb-4">El Brocade G720 es un switch de alto rendimiento diseñado para infraestructuras de red críticas, que requiere configuraciones precisas y uniformes para optimizar su funcionamiento y seguridad. La automatización con Ansible facilita la administración masiva y reduce los errores humanos, mejorando la eficiencia operativa.</p>
+        <p class="mb-4">En esta documentación se detallan los pasos para desplegar configuraciones estándar, a través de un playbook Ansible, permitiendo a los equipos de operaciones mantener la infraestructura con rapidez y confiabilidad.</p>      
+      
+       
+      
+      </section>
+
+      
+    </main>
+
+  </div>
+  <footer class="bg-gray-800 text-gray-200 text-sm text-center p-4 mt-10">
+    <p class="mb-1">&copy; 2025 - Documento de uso privado. </p>
+    
+  </footer>
+</body>
 </html>
