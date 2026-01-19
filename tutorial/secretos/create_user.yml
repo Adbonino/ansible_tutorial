@@ -1,0 +1,20 @@
+# ejecucion: 
+# ansible-playbook cerate_user.yml 
+
+---
+- name: create user accounts for all our servers
+  hosts: devservers
+  become: True
+  remote_user: devops
+  # archivo que contiene el secreto cifrado con vault 
+  # el playbook me va a pedir la contraseña
+    # contenido del archivo:
+    #     username: ansibleuser1
+    #     pwhash: $6$jf...uxhP1
+  vars_files:
+    - secret.yml
+  tasks:
+    - name: Creating user from secret.yml
+      user:
+        name: "{{ username }}"
+        password: "{{ pwhash }}"
