@@ -1,0 +1,12 @@
+- name: Manage network connections
+  community.general.nmcli:
+    conn_name: "{{ item.name }}"
+    ifname: "{{ item.interface | default(omit) }}"
+    type: "{{ item.type | default('ethernet') }}"
+    ip4: "{{ item.ip4 | default(omit) }}"
+    gw4: "{{ item.gw4 | default(omit) }}"
+    dns4: "{{ item.dns4 | default(omit) }}"
+    autoconnect: yes
+    state: "{{ item.state | default('present') }}"
+  loop: "{{ network_connections }}"
+  notify: Reload NetworkManager
