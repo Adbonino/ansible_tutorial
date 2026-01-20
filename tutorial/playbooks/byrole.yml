@@ -1,0 +1,11 @@
+---
+
+- name: Full install
+  hosts: east_webserbers
+  roles:
+    - fullinstall
+
+- name: Basic Install
+  hosts: west_webserbers
+  roles:
+    - basicinstall
