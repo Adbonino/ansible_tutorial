@@ -1,0 +1,6 @@
+---
+
+- name: install named packages
+  yum:
+    name: named
+    state: present

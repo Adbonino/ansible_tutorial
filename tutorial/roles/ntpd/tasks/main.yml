@@ -1,0 +1,6 @@
+---
+
+- name: install ntpd packages
+  yum:
+    name: ntpd
+    state: present
