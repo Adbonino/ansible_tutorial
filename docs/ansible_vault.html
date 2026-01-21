@@ -1,0 +1,38 @@
+# ansible-vault create httpdbyvault
+# se pide una contraseña y su verificaion y luego abre el editor predeterminado
+
+---
+- name: Install httpd package
+  hosts: localhost
+
+  tasks:
+  - name: Install package
+    yum:
+      name: httpd 
+      state: present
+
+# ansible-playbook httdpbyvault.yml      =>   genera un ERROR
+
+# ansible-playbook httpdbyvault --ask-vault-passs
+vault password: 
+
+# ansible-vault view httpdbyvault.yml
+vault password:
+
+# ansible-vault edit httpdbyvault.yml
+vault password:
+
+# ansible-vault --help
+
+Para encriptar un archivo ya existente:
+# ansible-vault encrypt httpdbyvault.yml
+vault password:
+
+---------------------------------------------------------------------------------------------------------------
+Encriptar string para usar en un playbook
+# ansible-vault encrypt_string httpd
+vault password:
+
+# ansible-vault create/encrypt outputbystring.yml
+vault password:
+
