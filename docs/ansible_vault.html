@@ -1,6 +1,11 @@
-# ansible-vault create httpdbyvault
-# se pide una contraseña y su verificaion y luego abre el editor predeterminado
+<html>
 
+<body>
+<p>
+#ansible-vault create httpdbyvault
+# se pide una contraseña y su verificaion y luego abre el editor predeterminado
+</p>
+<pre>
 ---
 - name: Install httpd package
   hosts: localhost
@@ -10,6 +15,7 @@
     yum:
       name: httpd 
       state: present
+
 
 # ansible-playbook httdpbyvault.yml      =>   genera un ERROR
 
@@ -35,4 +41,6 @@ vault password:
 
 # ansible-vault create/encrypt outputbystring.yml
 vault password:
-
+</pre>
+</body>
+</html>
