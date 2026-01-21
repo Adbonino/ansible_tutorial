@@ -1,0 +1,21 @@
+---
+- name: Setup Apache Server
+  hosts: all
+  tasks:
+  - name: Install httpd
+    yum:
+      name: httpd
+      state: present
+    tags: i-httpd
+  - name: Start httpd
+    service:
+      name: httpd
+      state: started
+    tags: s-httpd
+
+# ansible-playbook httpbytags.yml -t i-httpd
+# ansible-playbook httpbytags.yml -t s-httpd
+# ansible-playbook httpbytags.yml --list-tags
+# ansible-playbook httpbytags.yml --skip-tags i-httpd
+
+# ansible-playbook httpbytags.yml --start-at-task 'Install httpd'
