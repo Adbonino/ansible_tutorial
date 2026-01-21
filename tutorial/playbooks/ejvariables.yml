@@ -1,0 +1,17 @@
+---
+- name: ejemplo de uso de variables
+  hosts: all
+  vars:
+    file_name: myfile
+    say: Hello World!
+  
+  tasks:
+  
+  - name: Crear Archivo
+    file:
+      state: touch
+      path: /tmp"{{ file_name}}".txt
+    
+  - name: imprimir saludo
+    debug:
+      msg: "{{ say }}"
